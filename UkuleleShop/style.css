@@ -1,0 +1,130 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#bar-top{
+    margin:0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 220px;
+    line-height: 100px;
+    background-color: gray;
+    color: white;
+}
+.bar-top-left span{
+    margin-top:0px;
+    margin-bottom:0px;
+    list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+}
+.bar-top-left {
+    margin-top:0px;
+    margin-bottom:0px;
+    margin-left:5px;
+}
+.bar-top-left img{
+    margin-top:0px;
+    margin-bottom:0px;
+}
+#bar-top a {
+    text-decoration: none;
+    color: white;
+}
+#bar-top a:hover {
+    color: #AAAAAA;
+}
+#bar-top li{
+      list-style-type: none;
+        font-family: Arial, Helvetica, sans-serif;
+       font-size: 14px;
+       color: white;
+}
+#bar-top li{
+    display: inline;
+    margin: 10px;
+}
+#search{
+    background:none;
+    border: 2px solid #ef6b37;
+    border-radius: 40px;
+    color: white;
+    width: 300px;
+    height: 30px;
+    text-transform: uppercase;
+}
+.search{
+    align-items: center;
+    justify-content: center;
+}
+.search .btn-danger{
+    margin-left: 0px;
+    background:none;
+    border: 2px solid #a85737;
+    border-radius: 5px;
+    color: white;
+    height: 30px;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+#slide{
+    width: 100%;
+    border: 1px solid wheat;
+}
+#tittle{
+    font-family: "BreeSerif", Georgia, Times, "Times New Roman", serif;
+    font-size: 3em;
+    color: #ef6b37;
+    margin: .5em 0;
+    text-transform: initial;
+    font-weight: 800;
+}
+.container{
+    align-items: center;
+    width: 1000px;
+    margin: 10px auto;   
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding-bottom: 50px;
+    border-bottom: 2px solid #e2a992;
+}
+.container .box button{
+    background:none;
+    border: 2px solid #ef6b37;
+    border-radius: 50px;
+    color: #ef6b37;
+    height: 30px;
+    width: 100%;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+.container .box {
+   display: flex;
+   flex-direction: column;
+   width: 200px;
+   justify-content: center;
+   text-align: center;
+   align-items: center;
+   border: 1px solid rgb(238, 234, 234);
+   padding: 10px;
+   margin-left: 25px;
+   margin-bottom: 20px;
+}
+.imgPro{
+    width: 180px;
+    margin: 3px;
+    height: 280px;
+    border: 1px solid rgb(238, 234, 234);
+}
+#container-cart {
+    display: none;
+    
+}
+#icon-cart{
+    cursor: pointer;
+}
