@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="bar-top">
+        <div class="bar-top-left">
+            <span>NEED ASSISTANCE? 80324609687</span>
+            <div>
+                <img src="Image/logo2.jpg" alt="" title="Hung Shop">
+            </div>
+        </div>
+        <div class="bar-top-center">
+            <ul>
+                <li><i class="fas fa-home" id="icon-home" onclick="displayPro()"></i></li>
+                <li><a href="#">My account</a></li>
+                <li><a href="#">My account</a></li>
+                <li><a href="#">My account</a></li>
+                <li><a href="#">My account</a></li>
+                <li><i class="fas fa-shopping-cart" id="icon-cart" onclick="displayCart()"></i></li>
+            </ul>
+            <div class="search">
+                <input type="text" id="search" placeholder="Search" title="search">
+                <button class="btn-search" onclick="search()"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="slide">
+        <img src="Image/slide1.jpg" id="slide" alt="">
+    </div> -->
+    <div id="main">
+        <div>
+            <center>
+                <p id="tittle">Check out the products</p>
+            </center>
+        </div>
+
+        <div id="container-product" class="container">
+        </div>
+        <div id="container-cart" class="container">
+
+
+        </div>
+        <div id="order-container">
+            <center><button id="btn-order" onclick="displayInfoCustomer()">Order</button></center>
+            <div id="info-customer">
+                <p><label>Your full name:</label> <input id="name-cus" type="text"><br></p>
+                <p><label>Your phone number:</label> <input id="phone-cus" type="text"><br></p>
+                <p><label>Your Address:</label> <input id="address-cus" type="text"><br></p>
+                <p><label>Description:</label> <input id="description-cus" type="text"><br></p>
+                <p><label>Total:</label><label id="total-price">000</label><button id="btn-ship" onclick="shipping()">Ship</button> <br></p>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footer-top">
+            <div class="footer-top-item">
+                <span>Shop Products</span> <br> Models Hawaiian Made <br> Custom Build <br> Accessories <br> Advanced Search
+            </div>
+            <div class="footer-top-item">
+                <span>Helpful Links</span> <br>Support Center <br>Shipping & Turnaround <br>Customer Service <br>Return Policy <br>Our Setup Process <br> Ukulele Care
+            </div>
+            <div class="footer-top-item" id="footer-top-easy">
+                <span>Easy Shopping</span> <br> We accept all major credit cards, PayPal, and now you can apply for PayPal credit and get 6 months with no interest! <br>
+                <img src="Image/sponsor.png" alt="" style="margin: 30px auto;">
+            </div>
+            <div class="footer-top-item" id="footer-top-contact">
+                <p><span>NEED ASSISTANCE?</span></p>
+                <p>808.622.8000</p>
+                <p>66-560 #4 Kamehameha Hwy.</p>
+                <p>Haleiwa HI, 96712</p>
+                Email:&nbsp;<a href="#">hung.nguyen@gmail.com</a>
+            </div>
+        </div>
+        <center><img src="Image/logo3.jpg" alt="logo" style="margin: 30px;"></center>
+    </div>
+    <script src="js.js"></script>
+
+</body>
+
+</html>

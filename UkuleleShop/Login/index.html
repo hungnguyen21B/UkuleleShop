@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="login-box">
+        <h1>Login</h1>
+        <div class="text-box">
+            <i class="fas fa-user"></i>
+            <input id="username" type="text" placeholder="Username">
+        </div>
+        <div class="text-box">
+            <i class="fas fa-lock"></i>
+            <input id="password" type="password" placeholder="Password">
+        </div>
+        <button class="btn-primary" onclick="login()">Sign in</button>
+        <p onclick="displayForgotContainer()">Forgot your password!</p>
+    </div>
+    <div id="forgot-box">
+        <h3>Form forgot password</h3>
+
+        <div class="text-box">
+            <i class="fas fa-user"></i>
+            <input id="forgot-username" type="text" placeholder="Username">
+        </div>
+        <div class="text-box">
+            <i class="fas fa-user"></i>
+            <input id="forgot-phonenumber" type="text" placeholder="Your phone number">
+        </div>
+        <div class="text-box" id="code-box">
+            <i class="fas fa-code"></i>
+            <input id="code" type="text" placeholder="Enter code and recheck">
+        </div>
+        <button class="btn-primary" onclick="checkForgotPassword()">Check</button>
+    </div>
+    <script src="js.js"></script>
+</body>
+
+</html>
