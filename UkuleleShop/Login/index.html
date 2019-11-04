@@ -10,35 +10,58 @@
 </head>
 
 <body>
-    <div id="login-box">
-        <h1>Login</h1>
-        <div class="text-box">
-            <i class="fas fa-user"></i>
-            <input id="username" type="text" placeholder="Username">
+    <div id="container-login" style="display: none;">
+        <div id="login-box">
+            <h1>Login</h1>
+            <div class="text-box">
+                <i class="fas fa-user"></i>
+                <input id="username" type="text" placeholder="Username">
+            </div>
+            <div class="text-box">
+                <i class="fas fa-lock"></i>
+                <input id="password" type="password" placeholder="Password">
+            </div>
+            <button class="btn-outline-primary" onclick="login()">Sign in</button>
+            <div class="footer-login">
+                <p onclick="displayForgotContainer()">Forgot your password!</p>
+                <button class="btn-outline-warning">Sign up</button>
+            </div>
         </div>
-        <div class="text-box">
-            <i class="fas fa-lock"></i>
-            <input id="password" type="password" placeholder="Password">
-        </div>
-        <button class="btn-primary" onclick="login()">Sign in</button>
-        <p onclick="displayForgotContainer()">Forgot your password!</p>
-    </div>
-    <div id="forgot-box">
-        <h3>Form forgot password</h3>
+        <div id="forgot-box">
+            <h3>Form forgot password</h3>
 
-        <div class="text-box">
-            <i class="fas fa-user"></i>
-            <input id="forgot-username" type="text" placeholder="Username">
+            <div class="text-box">
+                <i class="fas fa-user"></i>
+                <input id="forgot-username" type="text" placeholder="Username">
+            </div>
+            <div class="text-box">
+                <i class="fas fa-blender-phone"></i>
+                <input id="forgot-phonenumber" type="text" placeholder="Your phone number">
+            </div>
+            <div class="text-box" id="code-box">
+                <i class="fas fa-code"></i>
+                <input id="code" type="text" placeholder="Enter code and recheck">
+            </div>
+            <button class="btn-outline-primary" onclick="checkForgotPassword()">Check</button>
         </div>
-        <div class="text-box">
-            <i class="fas fa-user"></i>
-            <input id="forgot-phonenumber" type="text" placeholder="Your phone number">
+    </div>
+    <div id="container-register">
+        <div id="register-box">
+            <h1>Register</h1>
+            <div class="text-box">
+                <i class="fas fa-user"></i>
+                <input id="username-register" type="text" placeholder="Username">
+            </div>
+            <div class="text-box">
+                <i class="fas fa-lock"></i>
+                <input id="password-register" type="password" placeholder="Password">
+            </div>
+            <div class="text-box">
+                <i class="fas fa-lock"></i>
+                <input id="password-register" type="password" placeholder="Enter password again">
+            </div>
+            <button class="btn-outline-primary">Sign up</button>
         </div>
-        <div class="text-box" id="code-box">
-            <i class="fas fa-code"></i>
-            <input id="code" type="text" placeholder="Enter code and recheck">
-        </div>
-        <button class="btn-primary" onclick="checkForgotPassword()">Check</button>
     </div>
     <script src="js.js"></script>
 </body>

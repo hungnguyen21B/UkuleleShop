@@ -20,9 +20,16 @@
             <ul>
                 <li><i class="fas fa-home" id="icon-home" onclick="displayPro()"></i></li>
                 <li><a href="#">My account</a></li>
-                <li><a href="#">My account</a></li>
-                <li><a href="#">My account</a></li>
-                <li><a href="#">My account</a></li>
+                <li><a href="#">Shop</a></li>
+                <li class="dropdown"><a href="#">Category</a>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="catagories('Consert')">Consert</a>
+                        <a href="#" onclick="catagories('Baritone')">Baritone</a>
+                        <a href="#" onclick="catagories('Soprano')">Soprano</a>
+                        <a href="#" onclick="catagories('Tenor')">Tenor</a>
+                    </div>
+                </li>
+                <li><a href="file:///C:/Users/hung.nguyen/Desktop/UkuleleShop/Login/index.html">Sign out</a></li>
                 <li><i class="fas fa-shopping-cart" id="icon-cart" onclick="displayCart()"></i></li>
             </ul>
             <div class="search">
@@ -50,9 +57,9 @@
         <div id="order-container">
             <center><button id="btn-order" onclick="displayInfoCustomer()">Order</button></center>
             <div id="info-customer">
-                <p><label>Your full name:</label> <input id="name-cus" type="text"><br></p>
-                <p><label>Your phone number:</label> <input id="phone-cus" type="text"><br></p>
-                <p><label>Your Address:</label> <input id="address-cus" type="text"><br></p>
+                <p><label>Your full name <span>(*)</span>:</label> <input id="name-cus" type="text"><br></p>
+                <p><label>Your phone number<span>(*)</span>:</label> <input id="phone-cus" type="text"><br></p>
+                <p><label>Your Address<span>(*)</span>:</label> <input id="address-cus" type="text"><br></p>
                 <p><label>Description:</label> <input id="description-cus" type="text"><br></p>
                 <p><label>Total:</label><label id="total-price">000</label><button id="btn-ship" onclick="shipping()">Ship</button> <br></p>
             </div>

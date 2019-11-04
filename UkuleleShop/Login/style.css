@@ -11,6 +11,13 @@ body {
     margin: 20% auto;
 }
 
+#register-box {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin: 20% auto;
+}
+
 .text-box {
     font-size: 20px;
     margin: 10px 0px;
@@ -40,12 +47,11 @@ body {
     line-height: 25px;
 }
 
-#login-box .btn-primary {
-    background: none;
+#login-box .btn-outline-primary {
     border-radius: 50px;
     cursor: pointer;
-    color: #007bff;
     font-weight: bold;
+    outline: none;
 }
 
 #login-box p {
@@ -62,12 +68,31 @@ body {
     margin: 20% auto;
 }
 
-#forgot-box .btn-primary {
-    background: none;
+#forgot-box .btn-outline-primary {
     border-radius: 50px;
     cursor: pointer;
-    color: #007bff;
     font-weight: bold;
+    outline: none;
+}
+
+.footer-login {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-login button {
+    height: 30px;
+    font-weight: bold;
+    border-radius: 50px;
+}
+
+#register-box .btn-outline-primary {
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    outline: none;
 }
 
 

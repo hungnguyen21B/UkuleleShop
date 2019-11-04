@@ -4,7 +4,7 @@ listUkulele[0] = {
     name: "Ukulele Consert",
     price: 100.000,
     quantity: 10,
-    description: "The prouct of Hung corpration",
+    description: "The product of Hung corporation",
     image: "Image/consert.jpg"
 }
 listUkulele[1] = {
@@ -12,7 +12,7 @@ listUkulele[1] = {
     name: "Ukulele Consert",
     price: 200.000,
     quantity: 10,
-    description: "The prouct of Hung corpration",
+    description: "The product of Hung corporation",
     image: "Image/so.jpg"
 }
 listUkulele[2] = {
@@ -20,7 +20,7 @@ listUkulele[2] = {
     name: "Ukulele Soprano",
     price: 250.000,
     quantity: 10,
-    description: "The prouct of Hung corpration",
+    description: "The product of Hung corporation",
     image: "Image/soprano.jpg"
 }
 listUkulele[3] = {
@@ -28,7 +28,7 @@ listUkulele[3] = {
     name: "Ukulele Tenor",
     price: 100.000,
     quantity: 10,
-    description: "The prouct of Hung corpration",
+    description: "The product of Hung corporation",
     image: "Image/tenor.jpg"
 }
 listUkulele[4] = {
@@ -36,7 +36,7 @@ listUkulele[4] = {
     name: "Ukulele Baritone",
     price: 100.000,
     quantity: 10,
-    description: "The prouct of Hung corpration",
+    description: "The product of Hung corporation",
     image: "Image/baritone.jpg"
 }
 listUkulele[5] = {
@@ -44,7 +44,7 @@ listUkulele[5] = {
     name: "Ukulele Consert",
     price: 100.000,
     quantity: 10,
-    description: "The prouct of Hung corpration",
+    description: "The product of Loan store",
     image: "Image/consert.jpg"
 }
 listUkulele[6] = {
@@ -52,7 +52,7 @@ listUkulele[6] = {
     name: "Ukulele Soprano",
     price: 250.000,
     quantity: 10,
-    description: "The prouct of Hung corpration",
+    description: "The product of Hung corporation",
     image: "Image/soprano.jpg"
 }
 listUkulele[7] = {
@@ -60,7 +60,7 @@ listUkulele[7] = {
         name: "Ukulele Tenor",
         price: 100.000,
         quantity: 10,
-        description: "The prouct of Hung corpration",
+        description: "The product of Ngoc store",
         image: "Image/tenor.jpg"
     }
     // var slide = ["Image/slide1.jpg","Image/slide2.jpg","Image/slide3.jpg"]
@@ -115,9 +115,9 @@ function addDataPro(listUkulele) {
                     listUkulele[arg].quantity--;
                 } else {
                     cart[checkExist].quantity++;
-                    console.log(cart[checkExist].quantity);
+
                 }
-                console.log(listUkulele[arg].quantity);
+
 
             }
         }(i);
@@ -159,7 +159,9 @@ function addDataCart() {
         boxPro.className = "box";
         var namePro = document.createElement("p");
         var pricePro = document.createElement("span");
-        var quantityPro = document.createElement("span");
+        var quantityPro = document.createElement("input");
+        quantityPro.style.width = "1cm";
+        quantityPro.style.marginRight = "0.5cm";
         var descriptionPro = document.createElement("p");
         var imagePro = document.createElement("img");
         imagePro.className = "img-Cart";
@@ -168,7 +170,7 @@ function addDataCart() {
         divQuantityPro.className = "div-quantity-pro";
         var btnEditPro = document.createElement("button");
         pricePro.innerHTML = "$" + cart[i].price;
-        quantityPro.innerHTML = cart[i].quantity + "&nbsp&nbsp&nbsp&nbsp";
+        quantityPro.value = cart[i].quantity;
         namePro.innerHTML = cart[i].name;
         descriptionPro.innerHTML = cart[i].description;
         imagePro.src = cart[i].image;
@@ -179,30 +181,30 @@ function addDataCart() {
         btnEditPro.className = "btn-outline-info";
         btnDeletePro.onclick = function(arg) {
             return function() {
-                var positionPro = getPositionCodePro(arg);
+                var positionPro = getPositionCodePro(cart[arg].code);
                 if (cart[arg].quantity == 1) {
                     checkEmptyCart();
-                    cart.splice(arg, 1);
                 } else {
                     cart[arg].quantity--;
+                    listUkulele[positionPro].quantity++;
                 }
                 containerCart.innerHTML = '';
                 addDataCart();
-                listUkulele[positionPro].quantity++;
             }
         }(i);
         btnEditPro.onclick = function(arg) {
             return function() {
-                var positionPro = getPositionCodePro(arg);
-                if (cart[arg].quantity == 1) {
-                    checkEmptyCart();
-                    cart.splice(arg, 1);
-                } else {
-                    cart[arg].quantity--;
-                }
+                var positionPro = getPositionCodePro(cart[arg].code);
+                var quantityChanged = parseInt(quantityPro.value);
+                var quantityOfProduct = listUkulele[positionPro].quantity + cart[arg].quantity;
+                if (quantityChanged <= quantityOfProduct && quantityChanged > 0) {
+                    listUkulele[positionPro].quantity = quantityOfProduct - quantityChanged;
+                    cart[arg].quantity = quantityChanged;
+                } else if (quantityChanged <= quantityOfProduct) {
+                    alert("Please enter a true quantity");
+                } else alert("Not enough quantity for you. Shop has only " + quantityOfProduct + " products.");
                 containerCart.innerHTML = '';
                 addDataCart();
-                listUkulele[positionPro].quantity++;
             }
         }(i);
         divQuantityPro.appendChild(quantityPro);
@@ -221,9 +223,10 @@ function checkEmptyCart() {
     if (cart.length == 1) {
         var check = confirm("Your cart don't have anything if you delete this product! You are going to home page.");
         if (check == true) {
+            cart.splice(arg, 1);
             displayPro(listUkulele);
         } else {
-            containerCart.style.height = "600px";
+
         }
     }
 }
@@ -244,6 +247,7 @@ function displayCart() {
 }
 
 function displayPro() {
+    containerPro.innerHTML = '';
     containerPro.style.display = "grid";
     addDataPro(listUkulele);
     containerCart.style.display = "none";
@@ -256,16 +260,28 @@ function displayInfoCustomer() {
     displayInfoCus.style.display = "block";
 }
 
+function displayLoginForm() {
+    window.location = "C:\Users\hung.nguyen\Desktop\UkuleleShop\Login\index.html";
+}
+
 function search() {
     var searchtext = document.getElementById("search").value;
+    searchtext = searchtext.toLowerCase();
     displaysearch(searchtext);
+}
+
+function catagories(arg) {
+    arg = arg.toLowerCase();
+    displaysearch(arg);
 }
 
 function displaysearch(arg) {
     var searchResults = [];
     for (var i = 0; i < listUkulele.length; i++) {
-        var codeCompare = arg.localeCompare(listUkulele[i].name);
-        if (codeCompare == 0) {
+        var nameproduct = listUkulele[i].name;
+        var nameproduct = nameproduct.toLowerCase();
+        var codeCompare = nameproduct.indexOf(arg);
+        if (codeCompare != -1) {
             searchResults.push(listUkulele[i]);
         }
     }
@@ -292,19 +308,33 @@ function addDataCustomer() {
 }
 
 function shipping() {
-    var customer = {
-        customerInfo: addDataCustomer(),
-        products: cart,
-        total: parseFloat(totalPriceText.innerText)
-    }
-    var check = confirm("Are you sure!!!");
-    if (check == true) {
-        customers.push(customer);
-        cart = [];
-        alert("Your products are shipping. Now we will come back to home page.")
-        displayPro();
-    } else {
-
+    if (checkInputCustomer()) {
+        var check = confirm("Are you sure!!!");
+        if (check == true) {
+            var customer = {
+                customerInfo: addDataCustomer(),
+                products: cart,
+                total: parseFloat(totalPriceText.innerText)
+            }
+            customers.push(customer);
+            cart = [];
+            alert("Your products are shipping. Now we will come back to home page.")
+            displayPro();
+        } else {}
     }
     console.log(customer);
+    console.log(listUkulele);
+}
+
+function checkInputCustomer() {
+    var nametext = document.getElementById("name-cus").value;
+    var phonetext = document.getElementById("phone-cus").value;
+    var addresstext = document.getElementById("address-cus").value;
+
+    var cutphone = parseInt(phonetext.substring(1, phonetext.length));
+    if (nametext == "" || phonetext == "" || addresstext == "") {
+        alert("You should fill in the necessary information");
+        return false;
+    } else return true;
+
 }

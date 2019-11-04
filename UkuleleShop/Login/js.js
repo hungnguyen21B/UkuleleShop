@@ -50,9 +50,9 @@ function displayForgotContainer() {
     containerLogin.style.display = "none";
     containerForgot.style.display = "flex";
 }
+var code;
 
 function checkForgotPassword() {
-    var code;
     var usernametext = document.getElementById("forgot-username").value;
     if (countcheck == 0) {
         var phonetext = document.getElementById("forgot-phonenumber").value;
@@ -60,10 +60,11 @@ function checkForgotPassword() {
             usernameForgot: usernametext,
             phonenumberForgot: phonetext
         }
-        if (checkForgot(userForgot) == 0) {
-            alert("Your user name and phone number incorrect.");
-        } else if (checkLogin(userForgot) == 2) {
-            alert("Your phone number incorrect.");
+        var check = checkForgot(userForgot);
+        if (check == 0) {
+            alert("Your user name and phone number are incorrect.");
+        } else if (check == 2) {
+            alert("Your phone number is incorrect.");
         } else {
             countcheck++;
             displayCodeBox();
@@ -71,15 +72,31 @@ function checkForgotPassword() {
             console.log(code);
         }
     } else {
-        if (code == checkCodo()) {
-            alert("Your ")
+        if (checkCode()) {
+            var displayPassword = confirm("Your password is " + returnPassword(usernametext) + ". Sign in again");
+            if (displayPassword = true) {
+                window.location = "index.html";
+            }
+        } else {
+            alert("Your code is incorrect.");
         }
     }
 
 }
 
+function checkCode() {
+    var codetext = parseInt(document.getElementById("code").value);
+    if (codetext == code) {
+        return true;
+    } else return false;
+}
+
 function returnPassword(username) {
-    for (let i = 0; i < )
+    for (let i = 0; i < listUsers.length; i++) {
+        if (username == listUsers[i].username) {
+            return listUsers[i].password;
+        }
+    }
 }
 
 function checkForgot(arg) {
