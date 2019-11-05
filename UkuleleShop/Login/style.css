@@ -95,6 +95,10 @@ body {
     outline: none;
 }
 
+#code-register-box {
+    display: none;
+}
+
 
 /* #code {
     float: right;

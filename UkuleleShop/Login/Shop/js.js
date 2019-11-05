@@ -63,14 +63,16 @@ listUkulele[7] = {
         description: "The product of Ngoc store",
         image: "Image/tenor.jpg"
     }
-    // var slide = ["Image/slide1.jpg","Image/slide2.jpg","Image/slide3.jpg"]
+    // var slide = ["Image/slide1.jpg", "Image/slide2.jpg", "Image/slide3.jpg"]
     // var slidesrc = document.getElementById("slide");
-    //     for (var i = 0; i< slide.length;i++){
-    //         setTimeout(function show()
-    //         { 
-    //             slidesrc.src = slide[i];
-    //         }, 2000);
+    // for (var i = 0; i < slide.length; i++) {
+    //     setTimeout(function show() {
+    //         slidesrc.src = slide[i];
+    //     }, 2000);
+    //     if (i == slide.length - 1) {
+    //         i = 0;
     //     }
+    // }
 var cart = [];
 var customers = [];
 var main = document.getElementById("main");
@@ -279,9 +281,16 @@ function displaysearch(arg) {
     var searchResults = [];
     for (var i = 0; i < listUkulele.length; i++) {
         var nameproduct = listUkulele[i].name;
-        var nameproduct = nameproduct.toLowerCase();
-        var codeCompare = nameproduct.indexOf(arg);
-        if (codeCompare != -1) {
+        nameproduct = nameproduct.toLowerCase();
+        var priceproduct = listUkulele[i].price;
+        priceproduct = String(priceproduct).toLowerCase();
+        var descriptionproduct = listUkulele[i].description
+        descriptionproduct = descriptionproduct.toLowerCase();
+
+        var codeCompareName = nameproduct.indexOf(arg);
+        var codeCompareDes = priceproduct.indexOf(arg);
+        var codeComparePrice = descriptionproduct.indexOf(arg);
+        if (codeCompareName != -1 || codeCompareDes != -1 || codeComparePrice != -1) {
             searchResults.push(listUkulele[i]);
         }
     }
